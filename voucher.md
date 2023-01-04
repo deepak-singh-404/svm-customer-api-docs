@@ -29,7 +29,7 @@
 }
 ```
 
-## GENERATE_REFERRAL_CODE
+## REDEEM_REFERRAL_CODE
 
 ### Flow
 * Required Params: [referralCode]
