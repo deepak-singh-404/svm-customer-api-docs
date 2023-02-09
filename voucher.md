@@ -3,6 +3,8 @@
 * [GENERATE_REFERRAL_CODE](#GENERATE_REFERRAL_CODE)
 * [REDEEM_REFERRAL_CODE](#REDEEM_REFERRAL_CODE)
 * [GET_CUSTOMER_PROFILE](#GET_CUSTOMER_PROFILE)
+* [GET_REFERRAL_CODE](#GET_REFERRAL_CODE)
+* [APPLY_REFERRAL_CODE](#APPLY_REFERRAL_CODE)
 
 ## GENERATE_REFERRAL_CODE
 
@@ -63,5 +65,56 @@
         "__v": 0,
         "referral": "6324a8acd91690055b2b768c"
     }
+}
+```
+
+## GET_REFERRAL_CODE
+
+### Flow
+* Required Fields: []
+
+**URL** : `/dev/api/v1/getReferralCode`
+**Method** : `GET`
+**Header** : `application/json`
+**Auth required** : Yes
+**Permissions required** : None
+
+## Success Response 
+**Code** : `200`
+**Response**
+```json
+{
+    "success": true,
+    "action": "GET_REFERRAL_CODE-4a907c53-3ed6-425b-b51c-d25d0ea70851",
+    "message": "Fetched successfully.",
+    "response": {
+        "_id": "636e30e1ff17b27d5e9d7ef5",
+        "phoneNumber": "+919415332242",
+        "name": "Deepak Singh",
+        "welcomeReferralCode": "DEE4228"
+    }
+}
+```
+
+## APPLY_REFERRAL_CODE
+
+### Flow
+* Required Params: [code]
+
+**URL** : `/dev/api/v1/applyReferralCode?code=DEE4228`
+**Method** : `GET`
+**Header** : `application/json`
+**Auth required** : Yes
+**Permissions required** : None
+
+## Success Response 
+**Code** : `200`
+**Response**
+```json
+{
+    "success": true,
+    "action": "APPLY_REFERRAL_CODE-d90a7069-7a9e-4a71-8120-1df33715fb7f",
+    "message": "Redeemed successfully",
+    "response": {}
 }
 ```
