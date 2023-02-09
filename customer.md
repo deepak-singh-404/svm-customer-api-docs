@@ -2,6 +2,8 @@
 
 * [GET_CUSTOMER_PROFILE](#GET_CUSTOMER_PROFILE)
 * [GET_WALLET_TRANSACTIONS](#GET_WALLET_TRANSACTIONS)
+* [GET_CUSTOMER_WALLET](#GET_CUSTOMER_WALLET)
+
 
 ## GET_CUSTOMER_PROFILE
 
@@ -163,5 +165,39 @@
             "createdAt": "2023-01-04T17:05:25.862Z"
         }
     ]
+}
+```
+
+## GET_CUSTOMER_WALLET
+
+### Flow
+* Required Fields: []
+
+**URL** : `/dev/api/v1/getCustomerWallet`
+**Method** : `GET`
+**Header** : `application/json`
+**Auth required** : Yes
+**Permissions required** : None
+
+## Success Response 
+**Code** : `200`
+**Response**
+```json
+{
+    "success": true,
+    "statusCode": 200,
+    "action": "GET_CUSTOMER_WALLET-90d31971-4a24-4005-a8b3-26be44d25fe9",
+    "message": "Fetched successfully.",
+    "response": {
+        "_id": "63e3deabeae095c783560fde",
+        "customer": "6324a8acd91690055b2b768c",
+        "referralAmount": 100,
+        "refundAmount": 0,
+        "cashback": 0,
+        "totalWalletAmount": 100,
+        "createdAt": "2023-02-08T17:40:59.382Z",
+        "updatedAt": "2023-02-08T17:40:59.382Z",
+        "__v": 0
+    }
 }
 ```
