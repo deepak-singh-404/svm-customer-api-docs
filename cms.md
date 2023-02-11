@@ -10,7 +10,7 @@
 **URL** : `/dev/api/v1/getCurrentBuildVersion`
 **Method** : `GET`
 **Header** : `application/json`
-**Auth required** : Yes
+**Auth required** : None
 **Permissions required** : None
 
 ## Success Response 
