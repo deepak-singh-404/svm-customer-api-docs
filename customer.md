@@ -192,7 +192,7 @@
 ### Flow
 * Required Params: ["customerId"]
 
-**URL** : `/dev/api/v1/getAddressOfCustomer?customerId=636e30e1ff17b27d5e9d7ef5`
+**URL** : `/dev/api/v1/getCustomerAddress?customerId=636e30e1ff17b27d5e9d7ef5`
 **Method** : `GET`
 **Header** : `application/json`
 **Auth required** : Yes
