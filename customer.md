@@ -3,6 +3,8 @@
 * [GET_CUSTOMER_PROFILE](#GET_CUSTOMER_PROFILE)
 * [GET_WALLET_TRANSACTIONS](#GET_WALLET_TRANSACTIONS)
 * [GET_CUSTOMER_WALLET](#GET_CUSTOMER_WALLET)
+* [ADD_ADDRESS](#ADD_ADDRESS)
+* [GET_ADDRESS_OF_CUSTOMER](#GET_ADDRESS_OF_CUSTOMER)
 
 
 ## GET_CUSTOMER_PROFILE
@@ -82,87 +84,6 @@
             "transactionDescription": "referAndEarn",
             "validUpto": "2023-02-02",
             "createdAt": "2023-01-03T19:12:18.506Z"
-        },
-        {
-            "_id": "63b47e33302fe4b207288a05",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-03T19:12:51.844Z"
-        },
-        {
-            "_id": "63b47e39302fe4b207288a13",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-03T19:12:57.621Z"
-        },
-        {
-            "_id": "63b47e3a302fe4b207288a21",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-03T19:12:58.809Z"
-        },
-        {
-            "_id": "63b5b050abb56ca4d51a3923",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-04T16:58:56.857Z"
-        },
-        {
-            "_id": "63b5b052abb56ca4d51a3931",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-04T16:58:58.474Z"
-        },
-        {
-            "_id": "63b5b053abb56ca4d51a393f",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-04T16:58:59.744Z"
-        },
-        {
-            "_id": "63b5b055abb56ca4d51a394d",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-04T16:59:01.097Z"
-        },
-        {
-            "_id": "63b5b10be12d259a64ae7557",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-02",
-            "createdAt": "2023-01-04T17:02:03.088Z"
-        },
-        {
-            "_id": "63b5b1d5096e8e0df6742023",
-            "customer": "636e30e1ff17b27d5e9d7ef5",
-            "transactionType": "credit",
-            "transactionAmount": 100,
-            "transactionDescription": "referAndEarn",
-            "validUpto": "2023-02-03",
-            "createdAt": "2023-01-04T17:05:25.862Z"
         }
     ]
 }
@@ -198,6 +119,157 @@
         "createdAt": "2023-02-08T17:40:59.382Z",
         "updatedAt": "2023-02-08T17:40:59.382Z",
         "__v": 0
+    }
+}
+```
+
+
+## ADD_ADDRESS
+
+### Flow
+* Required Fields: ["customerId", "address", "save"]
+
+**URL** : `/dev/api/v1/addAddress`
+**Method** : `POST`
+**Header** : `application/json`
+**Auth required** : Yes
+**Permissions required** : None
+
+## Request Body 
+```json
+{
+    "customerId": "636e30e1ff17b27d5e9d7ef5",
+    "address": {
+        "name": "Deepak Singh",
+        "houseNo": "B 80 2",
+        "phoneNumber": "+919415332242",
+        "coordinates": [],
+        "landmark": "Near Sanjay Properties 2",
+        "zipcode": "201301"
+    },
+    "save": true
+}
+```
+## Success Response 
+**Code** : `200`
+**Response**
+```json
+{
+    "success": true,
+    "message": "Address saved successfully",
+    "response": {
+        "_id": "636e30e1ff17b27d5e9d7ef5",
+        "savedAddress": [
+            {
+                "name": "Deepak Singh",
+                "zipcode": 201301,
+                "phoneNumber": "+919415332242",
+                "houseNo": "B 80 2",
+                "landmark": "Near Sanjay Properties 2",
+                "coordinates": [],
+                "_id": "63edcb95271f41ef7b08ff1d"
+            },
+            {
+                "name": "Nishant",
+                "zipcode": 94043,
+                "phoneNumber": "8521824578",
+                "houseNo": "VR PG",
+                "landmark": "Room -403",
+                "coordinates": [
+                    37.4217937,
+                    -122.083922
+                ],
+                "_id": "63e67840afcffb85bc772925"
+            }
+        ]
+    },
+    "action": "add_address"
+}
+```
+
+## GET_ADDRESS_OF_CUSTOMER
+
+### Flow
+* Required Fields: []
+
+**URL** : `/dev/api/v1/getAddressOfCustomer`
+**Method** : `GET`
+**Header** : `application/json`
+**Auth required** : Yes
+**Permissions required** : None
+
+## Success Response 
+**Code** : `200`
+**Response**
+```json
+{
+    "action": "GET_ADDRESS_OF_CUSTOMER",
+    "success": true,
+    "message": "Fetched successfully.",
+    "response": {
+        "defaultAddress": {
+            "city": "Noida",
+            "coordinates": [],
+            "houseNo": "B 80 2",
+            "landmark": "Near Sanjay Properties 2",
+            "name": "Deepak Singh",
+            "phoneNumber": "+919415332242",
+            "state": "Uttar Pradesh",
+            "zipcode": 201301
+        },
+        "lastServiceAddress": {
+            "name": "Deepak Singh",
+            "zipcode": 201305,
+            "phoneNumber": "+919415332242",
+            "city": "Noida",
+            "state": "Uttar Pradesh",
+            "coordinates": []
+        },
+        "_id": "636e30e1ff17b27d5e9d7ef5",
+        "savedAddress": [
+            {
+                "name": "Deepak Singh",
+                "zipcode": 201301,
+                "phoneNumber": "+919415332242",
+                "houseNo": "B 80 2",
+                "landmark": "Near Sanjay Properties 2",
+                "coordinates": [],
+                "_id": "63edcb95271f41ef7b08ff1d"
+            },
+            {
+                "name": "Deepak Singh",
+                "zipcode": 201305,
+                "phoneNumber": "+919415332242",
+                "houseNo": "B 80",
+                "landmark": "Near Sanjay Properties",
+                "coordinates": [],
+                "_id": "63edcabc271f41ef7b08ff06"
+            },
+            {
+                "name": "Nishant",
+                "zipcode": 94043,
+                "phoneNumber": "8521824578",
+                "houseNo": "VR PG",
+                "landmark": "Room -404",
+                "coordinates": [
+                    37.4217937,
+                    -122.083922
+                ],
+                "_id": "63e6787eafcffb85bc77292d"
+            },
+            {
+                "name": "Nishant",
+                "zipcode": 94043,
+                "phoneNumber": "8521824578",
+                "houseNo": "VR PG",
+                "landmark": "Room -403",
+                "coordinates": [
+                    37.4217937,
+                    -122.083922
+                ],
+                "_id": "63e67840afcffb85bc772925"
+            }
+        ]
     }
 }
 ```
