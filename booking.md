@@ -59,8 +59,8 @@
 * Required Fields: ["customerId", "timeSlot", "serviceDate", "bookingId"]
 * Optional Fields: ["reason"]
 
-**URL** : `/dev/api/v1/cancelBooking`
-**Method** : `POST`
+**URL** : `/dev/api/v1/rescheduleService`
+**Method** : `PUT`
 **Header** : `application/json`
 **Auth required** : Yes
 **Permissions required** : None

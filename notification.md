@@ -4,7 +4,7 @@
 * [DISMISS_NOTIFICATION](#DISMISS_NOTIFICATION)
 
 
-## GET_CUSTOMER_PROFILE
+## GET_NOTIFICATION
 
 ### Flow
 * Required Params: [customerId]
